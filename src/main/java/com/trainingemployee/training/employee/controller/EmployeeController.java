@@ -31,9 +31,9 @@ public class EmployeeController {
         return employeeService.updateEmployee(employee);
     }
 
-    @DeleteMapping("/deleteemp")
-    public String deleteEmployee(@RequestBody Employee employee)
+    @DeleteMapping("/deleteemp/{empid}")
+    public String deleteEmployee(@PathVariable String empid)
     {
-        return employeeService.deleteEmployee(employee.getId());
+        return employeeService.deleteEmployee(Integer.parseInt(empid));
     }
 }
